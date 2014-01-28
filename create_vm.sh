@@ -168,7 +168,7 @@ if [ $flavor == 'centos' ];then
   ip=$ip:1:$gateway:255.255.255.0:$vm_name:eth0:off \
   nameserver=$nameserver \
   noipv6 \
-  ks=http://${ks-server}/config/ks.php?vm_name=${vm_name}&ip=${ip}&nm=255.255.255.0&gw=${gateway}&ns=$nameserver"
+  ks=http://${ksserver}/config/ks.php?vm_name=${vm_name}&ip=${ip}&nm=255.255.255.0&gw=${gateway}&ns=$nameserver"
 
 else
   # assume debian
@@ -184,7 +184,7 @@ else
   netcfg/get_gateway=$gateway \
   netcfg/get_nameservers=$nameserver \
   netcfg/disable_dhcp=true \
-  url=http://${ps-server}/config/preseed.cfg"
+  url=http://${psserver}/config/preseed.cfg"
 fi
 
 #### Start VM ####
